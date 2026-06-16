@@ -38,6 +38,18 @@ return [
             'report' => false,
         ],
 
+        /**
+         * NFR-1.3: Private disk untuk menyimpan dokumen sensitif (SK, RAB, LPJ).
+         * File di sini TIDAK bisa diakses langsung via URL publik.
+         * Akses hanya melalui FileAccessController dengan middleware auth.
+         */
+        'private' => [
+            'driver' => 'local',
+            'root'   => storage_path('app/private'),
+            'throw'  => false,
+            'report' => false,
+        ],
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

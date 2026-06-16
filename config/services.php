@@ -35,4 +35,21 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | FR-1.1: Google OAuth 2.0 Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Konfigurasi untuk login via Google OAuth.
+    | Restriksi domain: hanya @uin-alauddin.ac.id yang diizinkan.
+    | Dapatkan client_id dan client_secret dari Google Cloud Console:
+    | https://console.cloud.google.com/apis/credentials
+    |
+    */
+    'google' => [
+        'client_id'     => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect'      => env('GOOGLE_REDIRECT_URI', 'http://localhost:8000/api/auth/google/callback'),
+    ],
+
 ];
